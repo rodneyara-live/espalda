@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer para backup diario espalda a Backblaze B2
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=3600
+
+[Install]
+WantedBy=timers.target

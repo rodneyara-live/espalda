@@ -1,0 +1,13 @@
+[Unit]
+Description=Backup diario de /home/rodneyr/BackBlaze a Backblaze B2
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=rodneyr
+ExecStart=/home/rodneyr/Code-Projects/espalda/scripts/sync-backup.sh
+StandardOutput=journal
+StandardError=journal
+Nice=19
+IOSchedulingClass=idle

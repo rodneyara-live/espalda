@@ -1,0 +1,4 @@
+[b2remote]
+type = b2
+account = YOUR_APPLICATION_KEY_ID
+key = YOUR_APPLICATION_KEY
