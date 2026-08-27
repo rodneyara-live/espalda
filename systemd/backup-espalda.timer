@@ -2,9 +2,9 @@
 Description=Timer para backup diario espalda a Backblaze B2
 
 [Timer]
-OnCalendar=daily
+OnCalendar=*-*-* 15:00:00
 Persistent=true
-RandomizedDelaySec=3600
+RandomizedDelaySec=10800
 
 [Install]
 WantedBy=timers.target

@@ -2,9 +2,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LOG_DIR="${HOME}/.local/log"
-mkdir -p "${LOG_DIR}"
-LOG_FILE="${LOG_DIR}/espalda-backup.log"
+PROJECT_DIR="$(dirname "${SCRIPT_DIR}")"
+LOG_FILE="${PROJECT_DIR}/backup.log"
 
 SOURCE="/home/rodneyr/BackBlaze"
 REMOTE="b2remote"
