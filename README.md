@@ -67,6 +67,25 @@ sudo systemctl start backup-espalda.service
 rclone ls b2remote:espalda-backup
 ```
 
+## Ejecución on-demand
+
+Para correr un backup manualmente en cualquier momento (sin esperar al timer diario):
+
+```bash
+cd ~/Code-Projects/espalda   # ubicarte en el proyecto
+./scripts/sync-backup.sh     # correr el backup
+```
+
+Es útil saber que este proyecto **no usa entorno virtual**; los scripts requieren
+solo `rclone` instalado en el sistema (ver [Inicio rápido](#inicio-rápido)).
+
+Otros comandos útiles on-demand:
+
+```bash
+./scripts/verify-backup.sh          # verificar integridad del backup
+sudo systemctl start backup-espalda.service   # correr el sync como lo hace el timer
+```
+
 ## Documentación
 
 Ver [docs/procedimiento.md](docs/procedimiento.md) para la guía completa paso a paso.

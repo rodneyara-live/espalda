@@ -1,5 +1,29 @@
 # Procedimiento completo de backup a Backblaze B2
 
+## 0. Ejecución on-demand (resumen rápido)
+
+Si solo quieres correr un backup manualmente en cualquier momento, sin revisar el resto:
+
+```bash
+cd ~/Code-Projects/espalda
+./scripts/sync-backup.sh
+```
+
+- No se necesita entorno virtual ni activar nada: los scripts usan `rclone`, ya instalado.
+- El comando de arriba sincroniza `/home/rodneyr/BackBlaze` → `b2remote:espalda-backup`
+  y registra el resultado en `backup.log`.
+
+Verificar la integridad después:
+```bash
+./scripts/verify-backup.sh
+```
+
+Alternativa (equivale a correr el servicio del timer manualmente):
+```bash
+sudo systemctl start backup-espalda.service
+journalctl -u backup-espalda.service -f
+```
+
 ## 1. Crear cuenta y bucket en Backblaze B2
 
 ### 1.1 Crear cuenta
